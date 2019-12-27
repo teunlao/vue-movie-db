@@ -6,14 +6,14 @@
                       disable
                       v-show="false"
                       :pos-y="wheelPos"
-                      :animation-duration="4200"
+                      :animation-duration="4000"
         />
         <MoviesSlider :movies="moviesPopular"
                       class="ms-first"
                       disable
                       :delta-y="5"
                       :pos-y="wheelPos"
-                      :animation-duration="4200"
+                      :animation-duration="3200"
                       easing="easeOutQuint"
                       :default-offset="100"
         />
@@ -24,13 +24,13 @@
                       :pos-y="wheelPos"
                       reverse
                       easing="easeOutQuint"
-                      :animation-duration="3300"
+                      :animation-duration="2700"
         />
         <MoviesSlider :movies="moviesPopular"
                       class="ms-third"
                       :pos-y="wheelPos"
                       easing="easeOutQuint"
-                      :animation-duration="2700"
+                      :animation-duration="2300"
                       :default-offset="100"
         />
 
@@ -162,10 +162,10 @@ export default {
     }
 
     .ms-first {
-      margin-right: 160px;
+      margin-right: 180px;
     }
     .ms-second {
-      margin-right: 120px;
+      margin-right: 140px;
     }
   }
 </style>

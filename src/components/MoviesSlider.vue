@@ -59,7 +59,8 @@ export default {
   data() {
     return {
       cards: 20,
-      animation: null
+      animation: null,
+      stopAnimation: false
     }
   },
   computed: {
@@ -77,10 +78,11 @@ export default {
     ...mapMutations({ setActiveIndex: 'SET_ACTIVE_INDEX' }),
     startOffset() {
       if (!this.reverse) return (-this.size.card.h - this.size.card.m) * (this.deltaY + this.posY) + this.size.card.default.offset
-      return -(this.cards * this.size.card.h) - ((this.deltaY + this.posY) * (-this.size.card.h - this.size.card.m)) - this.size.card.alternative.offset
+      return -(this.cards * this.size.card.h) - ((this.deltaY + this.posY) * (-this.size.card.h - this.size.card.m))
     },
 
     animationTick() {
+      console.log(this.size.card.alternative.offset)
       const options = {
         targets: this.$el,
         top: this.totalPosY,
@@ -90,14 +92,18 @@ export default {
 
       if (this.easing) options.easing = this.easing
       if (this.reverse) {
-        if (this.totalPosY === -16300) {
-          this.animation.pause()
-          this.$el.style.top = `${this.totalPosY - this.size.card.w}px`
-          this.animation = anime(options)
+        if (this.totalPosY === -16505) {
+          this.stopAnimation = true
+          this.$el.style.top = `${this.totalPosY - (2 * this.size.card.h)}px`
         }
       }
+      if (parseInt(this.$el.style.top) === -16505 - (2 * this.size.card.h)) {
+        this.stopAnimation = false
+      }
 
-      this.animation = anime(options)
+      if (!this.stopAnimation) {
+        this.animation = anime(options)
+      }
     }
   },
   mounted() {
@@ -137,6 +143,6 @@ export default {
   .disable {
     pointer-events: none;
     filter: grayscale(80%);
-    opacity: 0.08;
+    opacity: 0.06;
   }
 </style>

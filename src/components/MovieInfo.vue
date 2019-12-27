@@ -1,7 +1,10 @@
 <template>
   <transition name="info">
     <div v-if="moviesPopular[activeIndex] && show" class="movie-info">
-      <h2  class="movie-info-title">{{moviesPopular[activeIndex].title}}</h2>
+      <div class="title-vote-wrap">
+        <h2  class="movie-info-title">{{moviesPopular[activeIndex].title}}</h2>
+        <span  class="movie-info-vote">{{moviesPopular[activeIndex].vote_average}}</span>
+      </div>
       <p  class="movie-info-overview">{{moviesPopular[activeIndex].overview}}</p>
     </div>
   </transition>
@@ -34,21 +37,48 @@ export default {
 
 <style lang="scss">
   .movie-info {
+    font-family: Verdana;
     display: flex;
+
     flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
-    color: white;
+    color: #E6E6E6;
     justify-content: flex-end;
 
+    .title-vote-wrap {
+      display: flex;
+      max-width: 980px;
+      flex-direction: row;
+      align-items: center;
+    }
+
     &-title {
+      font-size: 28px;
+      margin-left: 50px;
       position: relative;
     }
 
+    &-tmdb {
+      margin-left: 30px;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    &-vote {
+      margin-left: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      color: green;
+    }
+
     &-overview {
+      font-size: 22px;
+      margin-left: 50px;
+      margin-bottom: 120px;
+      max-width: 980px;
       position: relative;
-      color: red;
     }
   }
 

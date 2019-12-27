@@ -36,7 +36,7 @@ export default {
     .movie-title {
       position: relative;
       min-width: 40px;
-      color: white;
+      color: #E6E6E6;
       text-align: right;
       font-size: 26px;
       letter-spacing: 0.5px;

@@ -10,7 +10,7 @@ export default {
         card: {
           w: 500,
           h: 750,
-          m: 50,
+          m: 60,
           default: {
             offset: 100
           },
