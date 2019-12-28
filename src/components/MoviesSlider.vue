@@ -82,7 +82,7 @@ export default {
     },
 
     animationTick() {
-      console.log(this.size.card.alternative.offset)
+      // console.log(this.size.card.alternative.offset)
       const options = {
         targets: this.$el,
         top: this.totalPosY,
@@ -133,7 +133,6 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
 
     > div {
 
@@ -142,7 +141,7 @@ export default {
 
   .disable {
     pointer-events: none;
-    filter: grayscale(80%);
-    opacity: 0.06;
+    filter: grayscale(90%);
+    opacity: 0.09;
   }
 </style>

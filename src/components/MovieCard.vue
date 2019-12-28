@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import api from '@/api'
 export default {
   name: 'MovieCard',
@@ -20,6 +21,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['activeIndex']),
     w500() {
       return api.imageW500 + this.src
     }
@@ -49,7 +51,7 @@ export default {
     }
 
     .movie-img-wrap {
-      min-width: 500px;
+
       overflow: hidden;
     }
 

@@ -66,8 +66,14 @@ export default {
   mounted() {
     this.getMoviesPopular(this.page)
     window.addEventListener('wheel', evt => {
-      if ((this.wheelPos + evt.deltaY / 100) !== -1) {
-        this.wheelPos += (evt.deltaY / 100)
+      let delta
+      if (evt.deltaY < 0) {
+        delta = -1
+      } else {
+        delta = 1
+      }
+      if (this.wheelPos + delta > -1) {
+        this.wheelPos += delta
       }
     })
   },

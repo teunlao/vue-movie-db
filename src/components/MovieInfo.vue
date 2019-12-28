@@ -1,5 +1,6 @@
 <template>
-  <transition name="info">
+
+    <transition name="info">
     <div v-if="moviesPopular[activeIndex] && show" class="movie-info">
       <div class="title-vote-wrap">
         <h2  class="movie-info-title">{{moviesPopular[activeIndex].title}}</h2>
@@ -8,6 +9,7 @@
       <p  class="movie-info-overview">{{moviesPopular[activeIndex].overview}}</p>
     </div>
   </transition>
+
 </template>
 
 <script>
@@ -83,7 +85,7 @@ export default {
   }
 
   .info-enter-active, .info-leave-active {
-    transition: opacity 0.8s ease;
+    transition: opacity 1s ease;
   }
   .info-enter, .info-leave-to /* .fade-leave-active до версии 2.1.8 */ {
     opacity: 0;
