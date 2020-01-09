@@ -1,29 +1,9 @@
 # vue-film-db
 
-## Project setup
-```
-npm install
-```
+demo: https://vue-film-db-77zouo0xv.now.sh/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+film slider, that fetch data from https://www.themoviedb.org/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* now work only for mouse scroll
 
-### Run your unit tests
-```
-npm run test:unit
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
