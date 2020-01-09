@@ -1,6 +1,6 @@
 # vue-film-db
 
-demo: https://vue-film-db-77zouo0xv.now.sh/
+demo: https://vue-film-db.raymiruone.now.sh/
 
 film slider, that fetch data from https://www.themoviedb.org/
 
